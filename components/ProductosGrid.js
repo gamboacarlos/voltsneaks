@@ -2,28 +2,33 @@ import styled from "styled-components";
 import { Image, Text } from "./atoms";
 import { BsTagFill } from "react-icons/bs";
 
-const CardsContainer = styled.div`
-  width: auto;
-  display: flex;
-  align-items: left;
-  flex-wrap: wrap;
-`;
 
-const Container = styled.div`
+const Grid = styled.div`
   width: 50%;
-  /* margin: 0 auto; */
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-row-gap: 30px;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  grid-column-gap: 20px;
+
+    @media screen and (max-width: 1400px){
+      grid-row-gap: 20px;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: auto;
+      grid-column-gap: 10px;
+    }
+    @media screen and (max-width: 990px){
+      grid-row-gap: 10px;
+      grid-template-rows: auto;
+      grid-column-gap: 5px;
+    }
+    @media screen and (max-width: 767px){
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-column-gap: 5px;
+    }
 `;
-// const CardWrapper = styled.div`
-//   display: flex;
-//   flex-direction: column;
-//   flex: 0 0 25%;
-//   max-width: 25%;
-//   padding-left: 12px;
-//   padding-right: 12px;
-//   box-sizing: border-box;
-// `;
 
 const Card = styled.div`
   display: flex;
@@ -33,9 +38,8 @@ const Card = styled.div`
   
   box-sizing: border-box;
   flex: 1 1 25%;
-  max-width: 25%;
+  /* max-width: 25%; */
   padding: 1rem;
-  margin: 1rem;
   border: 1px solid #eee;
   border-radius: 3px;
   box-shadow: 4px 4px #a8a8a8;
@@ -69,11 +73,10 @@ const CardBody = styled.div`
 `;
 
 
-const Productos = (data, basquet) => {
-  const ProductCard = () => {
+const ProductosGrid = (data, basquet) => {
+  const Products = () => {
     return (
-        <Container>
-        <CardsContainer>
+        <Grid>
           {data.map((products) => (
               <Card key={products.id}>
                 <Image src={products.imagenes[0].url} />
@@ -87,13 +90,12 @@ const Productos = (data, basquet) => {
                 </BodyWrapper>
               </Card>
           ))}
-        </CardsContainer>
-        </Container>
+        </Grid>
     );
   };
   return {
-    ProductCard,
+    Products,
   };
 };
 
-export default Productos;
+export default ProductosGrid;

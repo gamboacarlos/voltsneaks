@@ -1,5 +1,6 @@
 import Axios from 'axios'
 import Productos from 'components/Productos'
+import ProductosGrid from 'components/ProductosGrid'
 import Side from 'components/Side'
 import Head from 'next/head'
 import { useEffect, useState } from 'react'
@@ -19,7 +20,8 @@ export default function Home() {
 
   const [data, setData] = useState([])
   const [categoria, setCategoria] = useState([])
-  const { ProductCard } = Productos(data, categoria)
+  // const { ProductCard } = Productos(data, categoria)
+  const { Products } = ProductosGrid(data, categoria)
 
   useEffect(() => {
     const apiCall = async () =>{
@@ -43,7 +45,7 @@ export default function Home() {
 
     <IndexWrapper>
       <Side/>
-      <ProductCard/>
+      <Products/>
     </IndexWrapper>
     </>
   )
