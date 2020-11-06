@@ -1,10 +1,12 @@
-import { StyledImage } from "./Image.elements"
+import { ImageWrapper, StyledImage } from "./Image.elements"
 
 const Image = (props) => {
     return (
-        <StyledImage
-        {...props}
-        />
+        <ImageWrapper>
+            <StyledImage
+            {...props}
+            />
+        </ImageWrapper>
     )
 }
 
