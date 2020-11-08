@@ -1,6 +1,8 @@
 import styled from "styled-components";
 import { Image, Text } from "./atoms";
 import { BsTagFill } from "react-icons/bs";
+import { useState } from "react";
+import Filtro from "./Hook";
 
 
 const Grid = styled.div`
@@ -72,12 +74,12 @@ const CardBody = styled.div`
   }
 `;
 
+const ProductosGrid = ({ items }) => {
 
-const ProductosGrid = (data, basquet) => {
-  const Products = () => {
+
     return (
         <Grid>
-          {data.map((products) => (
+          {items.map((products) => (
               <Card key={products.id}>
                 <Image src={products.imagenes[0].url} />
                 <BodyWrapper>
@@ -92,10 +94,6 @@ const ProductosGrid = (data, basquet) => {
           ))}
         </Grid>
     );
-  };
-  return {
-    Products,
-  };
 };
 
 export default ProductosGrid;

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import Filtro from './Hook';
 
 const SideWrapper = styled.div`
   width: 20%;
@@ -6,12 +7,19 @@ const SideWrapper = styled.div`
   flex-direction: column;
   justify-content: center;
 `
+const BUTTON = {
+  margin: "5px",
+  maxWidth: "150px"
+}
+
 
 
 const Side = () => {
     return ( 
         <SideWrapper>
-            <p>Basket</p>
+          <button style={BUTTON}>Baloncesto</button>
+          <button style={BUTTON}>Casual</button>
+          <button style={BUTTON}>Running</button>
         </SideWrapper>
      );
 }

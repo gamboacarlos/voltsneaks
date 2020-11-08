@@ -1,11 +1,9 @@
 import Axios from 'axios'
-import Productos from 'components/Productos'
 import ProductosGrid from 'components/ProductosGrid'
 import Side from 'components/Side'
-import Head from 'next/head'
-import { useEffect, useState } from 'react'
 import styled from 'styled-components'
-
+import { useState, useEffect } from 'react'
+import Head from 'next/head'
 
 
 const IndexWrapper = styled.div`
@@ -14,26 +12,33 @@ width: 90%;
 display: flex;
 justify-content: center;
 `
-
-
 export default function Home() {
 
-  const [data, setData] = useState([])
-  const [categoria, setCategoria] = useState([])
-  // const { ProductCard } = Productos(data, categoria)
-  const { Products } = ProductosGrid(data, categoria)
+  const [productos, setProductos] = useState([])
+  const [filter, setFilter] = useState('')
+
+const items = () => {
+  const basquetball = productos.filter((products) => (products.categorias[0].nombre === 'Basquetball'))
+  const casual = productos.filter((products) => (products.categorias[0].nombre === 'Casual'))
+  const running = productos.filter((products) => (products.categorias[0].nombre === 'Running'))
+
+  if(filter === "basquetball"){
+    return basquetball
+  }else{
+    null
+  }
+}
+ 
+  setFilter('basquetball')
+
+  const apiCall = async () =>{
+  const getData = await Axios.get("http://207.154.235.174:1337/products")
+  setProductos(getData.data)
+}
 
   useEffect(() => {
-    const apiCall = async () =>{
-      const getData = await Axios.get("http://207.154.235.174:1337/products")
-      const categorias = await Axios.get("http://207.154.235.174:1337/categorias")
-      // console.log(getData.data)
-      setData(getData.data)
-      setCategoria(categorias.data[0])
-    }
     apiCall()
-  }, [])
-
+  }, [filter])
 
   return (
     <>
@@ -45,7 +50,7 @@ export default function Home() {
 
     <IndexWrapper>
       <Side/>
-      <Products/>
+      <ProductosGrid items={productos}/>
     </IndexWrapper>
     </>
   )
