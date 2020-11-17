@@ -14,25 +14,25 @@ export const ButtonWrapper = styled.a`
         switch(props.color){
             case "true":
                 return props.theme.colors.naranja
-                default:
-                    return "white"
-                }
+            default:
+                return "white"
+            }
             }};
     color: ${props => {
         switch(props.color){
             case "true":
                 return "white"
-                default:
-                    return props.theme.colors.text1
-                }
+            default:
+                return "#161616"
+            }
             }};
     border-color: ${props => {
         switch(props.color){
             case "true":
                 return props.theme.colors.naranja
-                default:
-                    return props.theme.colors.grey1
-                }
+            default:
+                return "#eee"
+            }
             }};
     margin: 0 1rem 0 0;
     border-radius: 2px;

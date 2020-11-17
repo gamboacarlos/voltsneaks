@@ -18,6 +18,7 @@ export const StyledImage = styled.img`
     object-fit: ${ ({cover}) => (cover ? "cover" : null) };
     filter: brightness(100%);
     transition: filter 500ms ease-in-out;
+    display: block;
 
     &:hover{
         filter: brightness(110%);

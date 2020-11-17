@@ -1,8 +1,7 @@
 import styled from "styled-components";
 import { Image, Text } from "./atoms";
 import { BsTagFill } from "react-icons/bs";
-import { useState } from "react";
-import Filtro from "./Hook";
+import { useData } from "./DataProvider";
 
 
 const Grid = styled.div`
@@ -17,22 +16,21 @@ const Grid = styled.div`
     @media screen and (max-width: 1400px){
       grid-row-gap: 20px;
       grid-template-columns: 1fr 1fr;
-      grid-template-rows: auto;
       grid-column-gap: 10px;
     }
     @media screen and (max-width: 990px){
       grid-row-gap: 10px;
-      grid-template-rows: auto;
       grid-column-gap: 5px;
     }
-    @media screen and (max-width: 767px){
+    @media screen and (max-width: 750px){
       grid-template-columns: 1fr;
-      grid-template-rows: auto;
       grid-column-gap: 5px;
     }
 `;
 
 const Card = styled.div`
+  position: relative;
+
   display: flex;
   align-items: left;
   flex-wrap: wrap;
@@ -49,8 +47,8 @@ const Card = styled.div`
   transition: border 200ms ease-in, box-shadow 200ms ease-in;
 
   &:hover{
-      border: 1px solid yellow;
-      box-shadow: 6px 6px yellow;      
+      border: 1px solid ${props => props.theme.colors.yellow};
+      box-shadow: 6px 6px ${props => props.theme.colors.yellow};      
     }
 `;
 const BodyWrapper = styled.div`
@@ -73,14 +71,26 @@ const CardBody = styled.div`
     margin: 0.7rem 0;
   }
 `;
+const Span = styled.span`
+  position: absolute;
+  top: 16px;
+  left: 17px;
+  color: white;
+  background-color: tomato;
+  padding: 5px;
+  z-index: 10;
+  border-radius: 4px;
+`
 
-const ProductosGrid = ({ items }) => {
+const ProductosGrid = () => {
 
+  const { productos, agregarProd } = useData()
 
-    return (
+  return (
         <Grid>
-          {items.map((products) => (
-              <Card key={products.id}>
+          {productos.map((products) => (
+              <Card key={products.id} onClick={()=>agregarProd(products)}>
+                { products.disponible === false ? <Span>Agotado</Span> : null }
                 <Image src={products.imagenes[0].url} />
                 <BodyWrapper>
                   <CardBody>
