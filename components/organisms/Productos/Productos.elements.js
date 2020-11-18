@@ -2,7 +2,8 @@ import styled from 'styled-components';
 
 
 export const Grid = styled.div`
-  width: 50%;
+  margin-top: 25px;
+  width: 100%;
   display: grid;
   grid-auto-columns: 1fr;
   grid-row-gap: 30px;
@@ -35,23 +36,24 @@ export const Card = styled.div`
   
   box-sizing: border-box;
   flex: 1 1 25%;
-  /* max-width: 25%; */
   padding: 1rem;
-  border: 1px solid #eee;
+  /* border: 1px solid #eee; */
   border-radius: 3px;
-  box-shadow: 4px 4px #a8a8a8;
-  cursor: pointer;
   transition: border 200ms ease-in, box-shadow 200ms ease-in;
 
   &:hover{
-      border: 1px solid ${props => props.theme.colors.yellow};
-      box-shadow: 6px 6px ${props => props.theme.colors.yellow};      
+      border: 1px solid ${({theme}) => theme.colors.orange};
+      box-shadow: 6px 6px ${({theme}) => theme.colors.orange};      
     }
 `;
 export const BodyWrapper = styled.div`
   display: flex;
   position: relative;
   align-items: flex-end;
+
+  svg {
+    cursor: pointer;
+  }
 `
 
 export const CardBody = styled.div`

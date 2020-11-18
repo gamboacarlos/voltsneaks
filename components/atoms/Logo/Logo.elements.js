@@ -2,11 +2,16 @@ import styled from 'styled-components';
 
 
 export const LogoWrapper = styled.p`
-    color: ${props => props.theme.colors.naranja};
-    font-size: 4rem;
-    line-height: 0;
-    font-weight: 700;
-    font-family: 'Roboto Slab', serif;
-    margin-right: 2rem;
-    cursor: pointer;
+  color: ${({theme}) => theme.colors.orange};
+  font-size: 1.4rem;
+  letter-spacing: -1px;
+  line-height: 0;
+  font-family: ${({theme}) => theme.fonts.logo};
+  cursor: pointer;
+
+    span {
+      color: ${({theme}) => theme.colors.fontPrimary};
+      letter-spacing: -1px;
+
+    }
 `

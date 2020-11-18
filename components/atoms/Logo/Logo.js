@@ -6,7 +6,7 @@ const Logo = () => {
     return (
         <Link href="/" passHref>
         <LogoWrapper>
-            P
+            VOLT<span>SNEAKS</span>
         </LogoWrapper>
         </Link>
     )

@@ -90,6 +90,6 @@ export const StyledText = styled.p`
                     return "1.6rem"
             }
         }};
-
+    color: ${({theme}) => theme.colors.fontPrimary};
     cursor: ${ ({pointer}) => (pointer ? "pointer" : null) };
 `

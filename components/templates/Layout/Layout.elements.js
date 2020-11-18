@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const Container = styled.div`
     width: 100%;
-    max-width: 1300px;
+    max-width: 1440px;
     padding: 0 5rem 0 5rem;
     margin: 0 auto;
     display: flex;
@@ -12,3 +12,4 @@ export const Container = styled.div`
     padding: 0 1.2rem 0 1.2rem;
     } */
 `
+

@@ -33,6 +33,7 @@ export const DataProvider = ({ children }) => {
                 imagenes {
                   url
                 }
+                modelo
                 descripcion
                 precio
                 cantidad

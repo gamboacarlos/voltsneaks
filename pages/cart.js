@@ -8,7 +8,6 @@ const cart = () => {
 
     return (
         <Layout>
-            <Anchor href="/">Home</Anchor>
             <Carrito/>
         </Layout>
     )

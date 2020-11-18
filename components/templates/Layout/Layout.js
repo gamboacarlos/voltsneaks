@@ -1,8 +1,14 @@
+import { Nav } from "components/organisms"
+import { useData } from "contexts/DataProvider"
 import Head from "next/head"
 import { Container } from "./Layout.elements"
 
 
 const Layout = ({ children }) => {
+
+  const { carrito } = useData()
+
+
     return (
         <>
       <Head>
@@ -13,6 +19,7 @@ const Layout = ({ children }) => {
         <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;700&display=swap" rel="stylesheet" /> 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossOrigin="anonymous" />
       </Head>
+      <Nav carrito={carrito}/>
         <Container>
             {children}
         </Container>

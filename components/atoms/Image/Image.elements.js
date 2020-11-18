@@ -11,7 +11,7 @@ export const ImageWrapper = styled.div`
 `;
 
 export const StyledImage = styled.img`
-    max-height: 300px;
+    max-height: 400px;
     width: 100%;
     max-width: ${props => props.width || "100%"};
     cursor: ${ ({pointer}) => (pointer ? "pointer" : null) };
@@ -20,7 +20,4 @@ export const StyledImage = styled.img`
     transition: filter 500ms ease-in-out;
     display: block;
 
-    &:hover{
-        filter: brightness(110%);
-    }
 `;

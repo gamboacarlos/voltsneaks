@@ -29,7 +29,6 @@ export const Item = styled.div`
   padding: 1rem;
   border: 1px solid #eee;
   border-radius: 3px;
-  box-shadow: 4px 4px #a8a8a8;
   cursor: pointer;
 `
 export const CarritoBody = styled.div`
