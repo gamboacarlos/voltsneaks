@@ -4,7 +4,6 @@ import styled from 'styled-components';
 export const ImageWrapper = styled.div`
   max-width: unset;
   display: flex;
-  /* -moz-box-pack: center; */
   justify-content: center;
   margin: auto;
   box-sizing: border-box;

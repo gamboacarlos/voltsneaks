@@ -37,8 +37,8 @@ export const Card = styled.div`
   box-sizing: border-box;
   flex: 1 1 25%;
   padding: 1rem;
-  /* border: 1px solid #eee; */
-  border-radius: 3px;
+  border: 1px solid transparent;
+  border-radius: 2px;
   transition: border 200ms ease-in, box-shadow 200ms ease-in;
 
   &:hover{

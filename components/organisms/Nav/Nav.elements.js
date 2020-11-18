@@ -1,13 +1,16 @@
 import styled from 'styled-components';
 
 export const NavWrapper = styled.div`
+  background-color: white;
   margin: 0 auto;
-  width: 80%;
-  height: 100px;
+  padding: 0 100px;
+  width: 100%;
+  height: 80px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
+  z-index: 999;
 `;
 
 export const LogoWrapper = styled.div`
