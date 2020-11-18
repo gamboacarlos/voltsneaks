@@ -1,25 +1,16 @@
 import { Anchor } from 'components/atoms';
-import Carrito from 'components/Carrito'
-import styled from 'styled-components';
+import { Carrito } from 'components/organisms';
+import Layout from 'components/templates/Layout/Layout';
 
-
-const CartWrapper = styled.div`
-  margin: 100px auto;
-  width: 80%;
-  display: flex;
-  flex-flow: column nowrap;
-`
 
 const cart = () => {
 
 
     return (
-     <>
-        <CartWrapper>
+        <Layout>
             <Anchor href="/">Home</Anchor>
             <Carrito/>
-        </CartWrapper>
-     </>
+        </Layout>
     )
 }
 

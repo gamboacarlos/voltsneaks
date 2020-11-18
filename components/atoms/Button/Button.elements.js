@@ -34,10 +34,10 @@ export const ButtonWrapper = styled.a`
                 return "#eee"
             }
             }};
-    margin: 0 1rem 0 0;
     border-radius: 2px;
     font-weight: 700;
     cursor: pointer;
     text-decoration: none;
     font-size: 1.2rem;
+    max-height: 44px;
 `

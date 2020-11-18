@@ -1,7 +1,7 @@
-import { DataProvider } from "components/DataProvider"
-import theme from "components/theme"
+import { DataProvider } from "contexts/DataProvider"
+import theme from "styles/theme"
 import { ThemeProvider } from "styled-components"
-import { Global } from 'components/GlobalStyles'
+import { Global } from 'styles/GlobalStyles'
 
 
 

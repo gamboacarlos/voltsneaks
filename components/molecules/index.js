@@ -1,1 +1,1 @@
-export { default as Selector } from './Selector/Selector'
+export { default as FilterControls } from './FilterControls/FilterControls'

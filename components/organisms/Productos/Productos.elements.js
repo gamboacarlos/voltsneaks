@@ -1,10 +1,7 @@
-import styled from "styled-components";
-import { Image, Text } from "./atoms";
-import { BsTagFill } from "react-icons/bs";
-import { useData } from "./DataProvider";
+import styled from 'styled-components';
 
 
-const Grid = styled.div`
+export const Grid = styled.div`
   width: 50%;
   display: grid;
   grid-auto-columns: 1fr;
@@ -28,7 +25,7 @@ const Grid = styled.div`
     }
 `;
 
-const Card = styled.div`
+export const Card = styled.div`
   position: relative;
 
   display: flex;
@@ -51,13 +48,13 @@ const Card = styled.div`
       box-shadow: 6px 6px ${props => props.theme.colors.yellow};      
     }
 `;
-const BodyWrapper = styled.div`
+export const BodyWrapper = styled.div`
   display: flex;
   position: relative;
   align-items: flex-end;
 `
 
-const CardBody = styled.div`
+export const CardBody = styled.div`
   width: 100%;
   margin-top: 1.5rem;
   background-color: white;
@@ -71,7 +68,7 @@ const CardBody = styled.div`
     margin: 0.7rem 0;
   }
 `;
-const Span = styled.span`
+export const Span = styled.span`
   position: absolute;
   top: 16px;
   left: 17px;
@@ -81,29 +78,3 @@ const Span = styled.span`
   z-index: 10;
   border-radius: 4px;
 `
-
-const ProductosGrid = () => {
-
-  const { productos, agregarProd } = useData()
-
-  return (
-        <Grid>
-          {productos.map((products) => (
-              <Card key={products.id} onClick={()=>agregarProd(products)}>
-                { products.disponible === false ? <Span>Agotado</Span> : null }
-                <Image src={products.imagenes[0].url} />
-                <BodyWrapper>
-                  <CardBody>
-                    <Text size="xSmall">{products.marca.nombre}</Text>
-                    <Text size="xxSmall">Modelo: {products.modelo}</Text>
-                    <Text size="xxSmall">Precio: {products.precio}</Text>
-                  </CardBody>
-                  <BsTagFill className="icon"/>
-                </BodyWrapper>
-              </Card>
-          ))}
-        </Grid>
-    );
-};
-
-export default ProductosGrid;
